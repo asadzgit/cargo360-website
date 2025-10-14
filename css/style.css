@@ -186,17 +186,30 @@ h1,h2,h3,h4,h5{
 
 
 /*** Header ***/
+/* --- Carousel Image Height Control --- */
+.header-carousel .owl-carousel-item {
+    position: relative;
+    height: 85vh; /* keeps consistent height on all screens */
+    min-height: 620px; /* ensures it's tall enough for text */
+}
+
+.header-carousel .owl-carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* maintains aspect ratio while covering */
+}
 /* Lift up carousel text container */
 @media (min-width: 992px) {
   .header-carousel .owl-carousel-item .container {
-      margin-top: -170px; /* adjust to desired height */
+      margin-top: 20px; /* adjust to desired height */
   }
 }
 
 @media (max-width: 768px) {
     .header-carousel .owl-carousel-item {
         position: relative;
-        min-height: 500px;
+        /* min-height: 500px; */
+         height: 65vh;
     }
     
     .header-carousel .owl-carousel-item img {
@@ -254,7 +267,7 @@ h1,h2,h3,h4,h5{
 }
 
 .page-header {
-    background: linear-gradient(rgba(6, 3, 21, .5), rgba(6, 3, 21, .5)), url(../img/carousel-1.jpg) center center no-repeat;
+    background: linear-gradient(rgba(6, 3, 21, .5), rgba(6, 3, 21, .5)), url(../img/ship7.jpg) center center no-repeat;
     background-size: cover;
 }
 
