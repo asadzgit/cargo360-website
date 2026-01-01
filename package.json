@@ -1,0 +1,24 @@
+{
+  "name": "cargo360-website",
+  "version": "1.0.0",
+  "description": "Cargo360 - Logistics and freight forwarding website",
+  "source": "index.html",
+  "scripts": {
+    "dev": "parcel",
+    "build:parcel": "parcel build index.html about.html contact.html service.html feature.html price.html quote.html team.html testimonial.html 404.html --public-url ./",
+    "build": "bash fix-build.sh",
+    "postbuild": "cp -r lib dist/ 2>/dev/null || true && cp .htaccess robots.txt dist/ 2>/dev/null || true",
+    "preview": "npm run build && parcel preview"
+  },
+  "keywords": [
+    "cargo360",
+    "logistics",
+    "freight-forwarding"
+  ],
+  "author": "Cargo360",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
+
