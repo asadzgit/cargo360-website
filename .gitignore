@@ -1,0 +1,86 @@
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Dependency directories
+node_modules/
+bower_components/
+vendor/
+
+# Build and cache directories
+.cache/
+dist/
+build/
+.temp/
+.tmp/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+*.env
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+*.save
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Source files (SCSS) - uncomment if you don't want to track source files
+# scss/
+
+# Development files
+package-lock.json
+yarn.lock
+composer.lock
+
+# cPanel specific
+cgi-bin/
+.htpasswd
+error_log
+access_log
+
+# Git
+.git/
+.gitignore.bak
+
+# Nested duplicate directories (if any)
+cargo360-website/cargo360-website/
+
+# Template files (if not needed)
+# shipping-company-website-template.jpg
+

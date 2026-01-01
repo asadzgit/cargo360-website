@@ -1,0 +1,26 @@
+# robots.txt for Cargo360 Website
+# https://www.cargo360pk.com
+
+User-agent: *
+Allow: /
+
+# Disallow admin or private areas (if any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow important pages
+Allow: /index.html
+Allow: /about.html
+Allow: /contact.html
+Allow: /service.html
+
+# Sitemap location (update with your actual domain)
+# Sitemap: https://www.cargo360pk.com/sitemap.xml
+
+# Crawl-delay (optional, adjust as needed)
+# Crawl-delay: 1
+
+# Block specific bots if needed
+# User-agent: BadBot
+# Disallow: /
+

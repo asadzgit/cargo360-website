@@ -1,10 +1,20 @@
 /********** Template CSS **********/
 :root {
     --primary: #FF3E41;
+    --cmpnyColor: #01304e;
+    --cmpnyColorLight: #156a9f;
     --secondary: #51CFED;
     --light: #F8F2F0;
     --dark: #060315;
+    --btnYellowCls:#ed8411;
 }
+/* All the headings have same color */
+h1,h2,h3,h4,h5{
+    color: var(--cmpnyColor);
+}
+.fa{
+        color: var(--btnYellowCls);
+    }
 
 .fw-medium {
     font-weight: 600 !important;
@@ -80,19 +90,25 @@
     margin-left: 8px;
 }
 
+.navbar {
+    border-top: 8px solid var(--cmpnyColor) !important; /* Replace with your desired color */
+}
+
+
 .navbar-light .navbar-nav .nav-link {
     position: relative;
     margin-right: 30px;
-    padding: 25px 0;
+    padding: 27px 0;
     color: #FFFFFF;
-    font-size: 15px;
+    font-size: 17px;
+    /* text-shadow: 0px 0px, 0px 0px, 0px 0px; */
     text-transform: uppercase;
     outline: none;
 }
 
-.navbar-light .navbar-nav .nav-link:hover,
+/* .navbar-light .navbar-nav .nav-link:hover, */
 .navbar-light .navbar-nav .nav-link.active {
-    color: var(--primary);
+    color: var(--btnYellowCls);
 }
 
 @media (max-width: 991.98px) {
@@ -102,7 +118,7 @@
     }
 
     .navbar-light .navbar-nav {
-        border-top: 1px solid #EEEEEE;
+        border-top: 2px solid #EEEEEE;
     }
 }
 
@@ -111,9 +127,12 @@
     height: 75px;
 }
 
+
+
+
 .navbar-light .navbar-nav .nav-link {
-    color: var(--dark);
-    font-weight: 500;
+    color: var(--cmpnyColor);
+    font-weight: 600;
 }
 
 .navbar-light.sticky-top {
@@ -121,22 +140,26 @@
     transition: .5s;
 }
 
+
+/* the border line that appears at the top of the nav links */
 @media (min-width: 992px) {
     .navbar-light .navbar-nav .nav-link::before {
         position: absolute;
         content: "";
         width: 0;
         height: 5px;
-        top: -6px;
+        top: -7px;
         left: 50%;
-        background: #FFFFFF;
+        background: var(--btnYellowCls);
         transition: .5s;
     }
 
-    .navbar-light .navbar-nav .nav-link:hover::before,
+    /* .navbar-light .navbar-nav .nav-link:hover::before, */
     .navbar-light .navbar-nav .nav-link.active::before {
-        width: 100%;
+        width: 110%;
         left: 0;
+        padding: 4px;
+        color: #ed8411;
     }
 
     .navbar-light .navbar-nav .nav-link.nav-contact::before {
@@ -163,10 +186,30 @@
 
 
 /*** Header ***/
+/* --- Carousel Image Height Control --- */
+.header-carousel .owl-carousel-item {
+    position: relative;
+    height: 85vh; /* keeps consistent height on all screens */
+    min-height: 620px; /* ensures it's tall enough for text */
+}
+
+.header-carousel .owl-carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* maintains aspect ratio while covering */
+}
+/* Lift up carousel text container */
+@media (min-width: 992px) {
+  .header-carousel .owl-carousel-item .container {
+      margin-top: 20px; /* adjust to desired height */
+  }
+}
+
 @media (max-width: 768px) {
     .header-carousel .owl-carousel-item {
         position: relative;
-        min-height: 500px;
+        /* min-height: 500px; */
+         height: 65vh;
     }
     
     .header-carousel .owl-carousel-item img {
@@ -187,6 +230,10 @@
         font-weight: 600;
     }
 }
+
+.span-cls{
+        color: var(--btnYellowCls);
+    }
 
 .header-carousel .owl-nav {
     position: absolute;
@@ -215,26 +262,43 @@
 
 .header-carousel .owl-nav .owl-prev:hover,
 .header-carousel .owl-nav .owl-next:hover {
-    background: var(--primary);
-    border-color: var(--primary);
+    background: var(--btnYellowCls);
+    border-color: var(--btnYellowCls);
 }
 
 .page-header {
-    background: linear-gradient(rgba(6, 3, 21, .5), rgba(6, 3, 21, .5)), url(../img/carousel-1.jpg) center center no-repeat;
+    background: linear-gradient(rgba(6, 3, 21, .5), rgba(6, 3, 21, .5)), url(../img/ship7.jpg) center center no-repeat;
     background-size: cover;
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
     color: var(--light);
 }
-
+.btn-yellow-cls{
+    background-color: var(--btnYellowCls);
+    color: white;
+}
+.btn-yellow-cls:hover{
+    color: var(--cmpnyColor);
+    /* color: black; */
+}
+.btn-cmpny-cls{
+    background-color: var(--cmpnyColor);
+    color: white;
+}
+.btn-cmpny-cls:hover{
+    color: var(--btnYellowCls) !important;
+}
 
 /*** About ***/
 @media (min-width: 992px) {
     .container.about {
         max-width: 100% !important;
     }
-
+    .fa{
+        color: var(--btnYellowCls);
+        width: 70px;
+    }
     .about-text  {
         padding-right: calc(((100% - 960px) / 2) + .75rem);
     }
@@ -251,6 +315,9 @@
         padding-right: calc(((100% - 1320px) / 2) + .75rem);
     }
 }
+
+
+
 
 
 /*** Feature ***/
@@ -316,7 +383,7 @@
     align-items: center;
     font-size: 16px;
     color: #FFFFFF;
-    background: var(--primary);
+    background: var(--btnYellowCls);
     border-radius: 0 35px 35px 0;
     transition: .5s;
     z-index: 2;
@@ -354,7 +421,7 @@
 .service-item a.btn-slide:hover span,
 .price-item a.btn-slide:hover i,
 .price-item a.btn-slide:hover span {
-    background: var(--secondary);
+    background: var(--cmpnyColor);
 }
 
 
@@ -419,9 +486,14 @@
 
 /*** Footer ***/
 .footer {
-    background: linear-gradient(rgba(6, 3, 21, .5), rgba(6, 3, 21, .5)), url(../img/map.png) center center no-repeat;
+    background-color:var(--cmpnyColor);
     background-size: cover;
 }
+.footer .fa {
+  margin-right: 10px;
+}
+
+
 
 .footer .btn.btn-social {
     margin-right: 5px;
@@ -473,4 +545,55 @@
 
 .footer .copyright a {
     color: var(--light);
+}
+
+.back-to-top{
+    background-color: var(--btnYellowCls);
+    color: white;
+}
+
+.back-to-top:hover{
+    background-color: var(--cmpnyColor);
+    color: white;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 110px;
+  right: 45px;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  z-index: 999;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.whatsapp-float:hover {
+  background-color: #20BA5A;
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-float:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 56px;
+    height: 56px;
+    font-size: 28px;
+    bottom: 100px;
+    right: 20px;
+  }
 }
