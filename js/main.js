@@ -110,5 +110,55 @@
         }
     });
     
+
+    // WhatsApp Floating Button Component
+    // Change the phone number here - it will update on all pages
+    const whatsappConfig = {
+        phoneNumber: '923337766609', // Update this number to change it everywhere
+        message: '' // Optional: Pre-filled message
+    };
+
+    // Pages where WhatsApp button should appear
+    const allowedPages = [
+        'index.html',
+        'about.html',
+        'service.html',
+        'contact.html',
+        '404.html'
+    ];
+
+    function createWhatsAppButton() {
+        // Get current page filename
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        
+        // Only create button on allowed pages
+        if (!allowedPages.includes(currentPage)) {
+            return;
+        }
+
+        // Check if button already exists to avoid duplicates
+        if ($('.whatsapp-float').length > 0) {
+            return;
+        }
+
+        const whatsappUrl = whatsappConfig.message 
+            ? `https://wa.me/${whatsappConfig.phoneNumber}?text=${encodeURIComponent(whatsappConfig.message)}`
+            : `https://wa.me/${whatsappConfig.phoneNumber}`;
+
+        const whatsappButton = $('<a>', {
+            href: whatsappUrl,
+            target: '_blank',
+            rel: 'noopener noreferrer',
+            class: 'whatsapp-float',
+            'aria-label': 'Contact us on WhatsApp',
+            html: '<i class="fab fa-whatsapp"></i>'
+        });
+
+        $('body').append(whatsappButton);
+    }
+
+    // Initialize WhatsApp button when DOM is ready
+    createWhatsAppButton();
+    
 })(jQuery);
 
